@@ -58,14 +58,14 @@ public class UserResourcesJPAController {
 			return entityModel;
 		}
 
-		// http://localhost:8080/jpa/users/10001
+		// http://localhost:8080/jpa/users/1
 
 		@DeleteMapping("/jpa/users/{id}")
 		public void deleteUser(@PathVariable int id) {
 			userRepository.deleteById(id);
 		}
 
-		// http://localhost:8080/jpa/users/10001/posts
+		// http://localhost:8080/jpa/users/1/posts
 		@GetMapping("/jpa/users/{id}/posts")
 		public List<Post> retrievePostsForUser(@PathVariable int id) {
 			Optional<User> user = userRepository.findById(id);
